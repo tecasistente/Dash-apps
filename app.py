@@ -8,6 +8,8 @@ import dash_bootstrap_components as dbc
 
 app = dash.Dash(__name__, use_pages=True,external_stylesheets=[dbc.themes.BOOTSTRAP])
 app.config.suppress_callback_exceptions=True
+server=app.server()
+
 
 layout = html.Div([
     dbc.NavbarSimple(
@@ -32,4 +34,4 @@ app.layout=html.Div(
 )
 
 if __name__ == '__main__':
-	app.run_server(debug=True)
+	app.run_server(debug=False)
