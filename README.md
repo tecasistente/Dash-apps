@@ -56,4 +56,4 @@ En el navegador ir a:
 ```
 
 ## Enlace de la Aplicación
-Acceder a la aplicación con el enlace: https://dash-app-t0d2.onrender.com/ 
+El enlace contiene algunas partes del proyecto: https://dash-app-t0d2.onrender.com/ 
