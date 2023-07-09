@@ -1,40 +1,37 @@
 # Proyectos Dash
-La web contiene diferentes proyectos realizadas en el framework de python, Dash. Cada uno contiene diferentes funcionalidaes y construido de una manera diferente para revisar las diferentes opciones que ofrece Dash al construir una web.
+El sitio web contiene diferentes proyectos realizados con el framework de Python, Dash. Cada uno de ellos ofrece diferentes funcionalidades y está construido de manera única para explorar las diversas opciones que Dash ofrece al desarrollar aplicaciones web.
 
 ## Subproyectos
 
-Todos aparecen en la barra de navegación y se accesa al dar click sobre ellos.
+Todos los subproyectos se muestran en la barra de navegación y se accede a ellos haciendo clic en ellos
 
 ### Ver el Clima
-* El proyecto con el que carga la web, tambien se puede acceder dede la barra de navegación, en la etiqueta "Ver Clima"
-* Se debe rellenar todos los input para obtener un resultado
-* El codigo fuente, de la inferfaz se encuentra en: pages/weather.py
-* El codigo fuente, de la logica se encuentra en: weather.py
+* Este es el proyecto con el que se carga la página web y se puede acceder a él desde la barra de navegación, en la etiqueta "Ver Clima".
+* Se deben completar todos los campos de entrada para obtener un resultado.
+* El código fuente de la interfaz se encuentra en: pages/weather.py.
+* El código fuente de la lógica se encuentra en: weather.py.
 
-![Image text](https://drive.google.com/file/d/1QZetMI31tsJ6RRpLpk6Vg6ggQ5bJFVju/view?usp=sharing)
 
 ### Corrección de texto
-* El proyecto con el que carga la web, tambien se puede acceder dede la barra de navegación, en la etiqueta "Grámatica"
+* Se puede acceder dede la barra de navegación, en la etiqueta "Grámatica"
 * Se debe rellenar todos los input para obtener un resultado
-* Retorna el texto correjido en caso de error
-* El codigo fuente, se encuentra en: pages/grammar.py
-* El codigo fuente, de la logica se encuentra en: grammar.py
-
-![Image text](https://drive.google.com/file/d/1Nssv3JaR6XlI1hihlBv1YfZZ_zbiAtPp/view?usp=sharing)
+* Retorna el texto corregido en caso de error
+* El código fuente, se encuentra en: pages/grammar.py
+* El código fuente, de la lógica se encuentra en: grammar.py
 
 ### Gráficos en HTML
 * El proyecto con el que carga la web, tambien se puede acceder dede la barra de navegación, en la etiqueta "HTML"
-* Según se cambie la opción en el checkbox se cambia los datos del grafico. 
-* Los datos que se muestran son obtenidos a traves de una enlace
-* Solo se utiliza HTML y CSS para hacer la interfaz
-* El codigo fuente, se encuentra en: pages/html.py
+* Según se cambie la opción en el checkbox se cambia los datos del gráfico. 
+* Los datos que se muestran son obtenidos a través de un enlace
+* Solo se utiliza HTML y CSS para construir la interfaz
+* El código fuente, se encuentra en: pages/html.py
 
 ### Gráficos en Boostrap
 * El proyecto con el que carga la web, tambien se puede acceder dede la barra de navegación, en la etiqueta "Boostrap"
-* Según se cambie la opción en el checkbox se cambia los datos del grafico. 
-* Los datos que se muestran son obtenidos a traves de una enlace
-* Se utiliza la biblioteca Boostrap para hacer la interfaz
-* El codigo fuente, se encuentra en: pages/boostrap.py
+* Según se cambie la opción en el checkbox se cambia los datos del gráfico. 
+* Los datos que se muestran son obtenidos a través  de una enlace
+* Se utiliza la biblioteca Boostrap para construir la interfaz
+* El código fuente, se encuentra en: pages/boostrap.py
 
 
 ## Instalación
@@ -57,3 +54,6 @@ En el navegador ir a:
 ```bash
   http://127.0.0.1:8050/
 ```
+
+## Enlace de la Aplicación
+Acceder a la aplicación con el enlace: https://dash-app-t0d2.onrender.com/ 

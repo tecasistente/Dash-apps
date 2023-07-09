@@ -2,12 +2,15 @@ import dash
 from dash import Dash, html, dcc
 from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
-from image_text import check_text
+from text import check_text
+
+#register the page for the web and the path
 
 dash.register_page(__name__,name="gramatica", path="/gramatica")
 
-
-# Definir el contenido de la página
+"""
+Layout for the actual page
+"""
 def layout():
     content = dbc.Container(
         
@@ -43,17 +46,16 @@ def layout():
     )
     return content
 
-# Definir el callback para corregir el texto
+# callback for correct the input text
 @dash.callback(
     Output('output-text', 'children'),
     [Input('corregir-btn', 'n_clicks')],
     [Input('input-text', 'value')]
 )
-def corregir_texto(n_clicks, input_text):
+def correct_text(n_clicks, input_text):
     if n_clicks:
-        # Utilizar  para corregir el texto
+        # check the input, if it has a error, it would be fixed
         text=check_text(input_text)
-        # Devolver el texto corregido
         return html.Div([
             html.Div(
                 html.H3("Texto corregido:"),
@@ -67,5 +69,5 @@ def corregir_texto(n_clicks, input_text):
             
         ])
 
-    # Si no se ha hecho clic en el botón, no mostrar ningún resultado
+    #button not being pressed
     return ''

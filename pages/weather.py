@@ -1,31 +1,13 @@
-
 import dash
-from dash import Dash, html, dcc
-from dash.dependencies import Input, Output
+from dash import Input, Output, html, dcc
 
 import dash_bootstrap_components as dbc
 from weather import main as get_weather
 
-
-#app = dash.Dash(__name__, use_pages=True,external_stylesheets=[dbc.themes.BOOTSTRAP])
-#app.config.suppress_callback_exceptions=True
-
-
-# Definición del diseño de la barra de navegación
-'''navbar = dbc.NavbarSimple(
-    children=[
-        dbc.NavItem(dbc.NavLink("Inicio", href="/")),
-        dbc.NavItem(dbc.NavLink("Acerca de", href="/acercade")),
-    ],
-    brand="Aplicación del Clima",
-    brand_href="#",
-    color="dark",
-    dark=True
-)'''
-
+#register the page for the web and the path
 dash.register_page(__name__,name="Clima", path="/")
 
-# Definición del contenido principal de la aplicación
+#Layout for the actual page
 content = dbc.Container(
     [
         dbc.Row(
@@ -35,19 +17,19 @@ content = dbc.Container(
                         dbc.Row(
                             [
                                 dbc.Label("Ciudad"),
-                                dbc.Input(id="input-ciudad", type="text", placeholder="Ingrese la ciudad"),
+                                dbc.Input(id="input-city", type="text", placeholder="Ingrese la ciudad"),
                             ]
                         ),
                         dbc.Row(
                             [
                                 dbc.Label("Estado"),
-                                dbc.Input(id="input-estado", type="text", placeholder="Ingrese el estado"),
+                                dbc.Input(id="input-state", type="text", placeholder="Ingrese el estado"),
                             ]
                         ),
                         dbc.Row(
                             [
                                 dbc.Label("País"),
-                                dbc.Input(id="input-pais", type="text", placeholder="Ingrese el país"),
+                                dbc.Input(id="input-country", type="text", placeholder="Ingrese el país"),
                             ]
                         ),
                         dbc.Button("Buscar", id="btn-buscar", color="primary", className="mt-3"),
@@ -68,8 +50,8 @@ content = dbc.Container(
     className="mt-4"
 )
 
-# Definición del diseño de la aplicación
-# Definición del diseño de la aplicación 
+
+#Load the layout 
 layout = html.Div(
     content,
     style={"backgroundColor": "#c0eaf0", "height": "100vh"}
@@ -77,26 +59,26 @@ layout = html.Div(
 
 
 @dash.callback(
-    Output("text-output", "children"),
-    Output("html-img", "src"),
+    Output("text-output", "children"), #weather results
+    Output("html-img", "src"), #image to represent the weather
     Input("btn-buscar", "n_clicks"),
     [
-        Input("input-pais", "value"),
-        Input("input-ciudad", "value"),
-        Input("input-estado", "value")
+        Input("input-country", "value"),
+        Input("input-city", "value"),
+        Input("input-state", "value")
     ]
 )
-
-def obtener_valores_clima(n_clicks, pais, ciudad, estado):
-    if n_clicks:
-        # Aquí puedes utilizar los valores ingresados por el usuario
-        # Realiza las acciones necesarias, como llamar a la API del clima o procesar los datos
-      
-        data=get_weather(pais,estado, ciudad)
-        imagen_url="https://openweathermap.org/img/wn/"+data.icon+"@2x.png"
-        dataText=str(data.main)+" : "+str(data.description) + "\nTemperatura : "+str(data.temperature)
-        
-        return dataText, imagen_url
-    else:
+def get_weather_values(n_clicks, country, city, state):
+    try:
+        if n_clicks:
+            # Here you can use the values entered by the user
+            # Perform the necessary actions, such as calling the weather API or processing the data
+            data=get_weather(country,state, city)
+            imagen_url="https://openweathermap.org/img/wn/"+data.icon+"@2x.png"
+            dataText=str(data.main)+" : "+str(data.description) + "\nTemperatura : "+str(data.temperature)
+            
+            return dataText, imagen_url
+        else:
+            return "",""
+    except:
         return "",""
-
